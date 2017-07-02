@@ -1,4 +1,4 @@
-package personal.projects;
+package com.projects;
 //http://www.java2s.com/Code/Jar/o/Downloadorgapachecommonscodecjar.htm
 /*********
 converts zip file to encrypted text file and vice-versa
@@ -98,9 +98,9 @@ public class ZipToTextAndTextToZip
 
         System.out.print( "Give the KEY(16 character alphanumeric)" );
         String key = scanner.nextLine();
-        System.out.println( "input = " + inputFileName );
+        System.out.println( "input = " + key );
 
-        if (key.length() == 16 && isAlphanumeric(key)) Del.encryptionKey = args[1];
+        if (key.length() == 16 && isAlphanumeric(key)) ZipToTextAndTextToZip.encryptionKey = key;
         else System.out.println("using default encryption/decryption key");
 
         if (inputFileName.endsWith(".zip"))
@@ -110,7 +110,7 @@ public class ZipToTextAndTextToZip
         } else if (inputFileName.endsWith(".txt"))
         {
             System.out.println("decoding...");            //String inputTextFileToZip="C:/Users/rbhushan/Desktop/systemencoded.txt";//output will be outdir + zip file
-            Del.encryptionKey = "0123456789abcdef";
+            ZipToTextAndTextToZip.encryptionKey = "0123456789abcdef";
             convertTextToZip(inputFileName);
         } else
         {
