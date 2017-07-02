@@ -11,3 +11,5 @@
 .gitignore text
 *.md text
 *.jar binary
+*.1 binary
+*.bat text
